@@ -1,2 +1,6 @@
 .venv
 venv
+.replit
+poetry.lock
+replit.nix
+pyproject.toml
