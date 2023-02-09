@@ -7,4 +7,4 @@ class Player {
 	}
 }
 
-player = new Player()
+let player = new Player()

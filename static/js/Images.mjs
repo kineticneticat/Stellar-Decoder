@@ -1,13 +1,13 @@
 import {ctx} from '../js/Main.mjs'
 
-let targetImages = 0
-let loadedImages = 0
+export let targetImages = 0
+export let loadedImages = 0
 
 export let testForImagesLoaded = () => targetImages == loadedImages
 
 export class ImageHandler {
 	constructor(path) {
-		this.path = `../images/${path}`
+		this.path = `../static/images/${path}`
 		this.img = new Image()
 		this.img.src = this.path
 		targetImages++
@@ -27,3 +27,6 @@ export class ImageHandler {
 	}
 }
 
+function doesImageExist(path) {
+	
+}

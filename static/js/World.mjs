@@ -1,20 +1,19 @@
-import {ImageHandler} from '../js/Images.mjs'
+import {tilemaps} from '../js/Tilemaps.mjs'
 
 class Scene {
-	constructor(name, groundHandler, doors, colliderHandler) {
+	constructor(name, doors, tilemap) {
 		this.name = name
-		this.groundHandler = groundHandler
 		this.doors = doors
-		this.colliderHandler = colliderHandler
+		this.tilemap = tilemap
 	}
 	draw() {
-		this.groundHandler.draw()
+		tilemaps[this.tilemap].draw()
 	}
 }
 
 class CWorld {
 	constructor() {
-		this.scene = new Scene('test', new ImageHandler('scenes/ground/test.png'), {}, new ImageHandler('scenes/collider/test_collider.png'))
+		this.scene = new Scene('test', {}, 0)
 	}
 	draw() {
 		this.scene.draw()

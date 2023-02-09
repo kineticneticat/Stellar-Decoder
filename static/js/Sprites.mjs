@@ -3,7 +3,7 @@ export class Sprite {
 		this.name = name
 		this.bundle = bundle
 	}
-	set pos() {
+	set pos(pos) {
 		this.pos = pos
 		draw()
 	}
