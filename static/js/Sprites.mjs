@@ -3,8 +3,8 @@ export class Sprite {
 		this.name = name
 		this.bundle = bundle
 	}
-	set pos(pos) {
-		this.pos = pos
-		draw()
+	draw(pos, state) {
+		// console.log(this.bundle, state)
+		this.bundle[state].draw(pos)
 	}
 }

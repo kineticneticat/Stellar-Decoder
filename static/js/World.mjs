@@ -1,4 +1,5 @@
 import {tilemaps} from '../js/Tilemaps.mjs'
+import {player} from '../js/Player.mjs'
 
 class Scene {
 	constructor(name, doors, tilemap) {
@@ -17,6 +18,7 @@ class CWorld {
 	}
 	draw() {
 		this.scene.draw()
+		// player.draw()
 	}
 	move() {}
 	switch() {}

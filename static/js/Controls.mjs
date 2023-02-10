@@ -1,7 +1,7 @@
 import {Vec2d} from '../js/Math.mjs'
 import {player} from '../js/Player.mjs'
 
-let keyLe, keyUp, keyRi, keyDo
+let keyLe=false, keyUp=false, keyRi=false, keyDo=false
 
 document.addEventListener('keydown', (e) => {
 		// console.log(e.keyCode)
@@ -43,5 +43,5 @@ export function input() {
 	if (keyDo) {move = move.add(new Vec2d(0, 2))}
 	if (keyLe) {move = move.add(new Vec2d(-2, 0))}
 	if (keyRi) {move = move.add(new Vec2d(2, 0))}
-	player.move(move)
+	player.move(move, [keyUp, keyDo, keyLe, keyRi])
 }

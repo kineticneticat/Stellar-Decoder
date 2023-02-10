@@ -1,5 +1,5 @@
 import {testForImagesLoaded, ImageHandler, targetImages, loadedImages} from '../js/Images.mjs'
-import {testForJsonLoaded, JsonHandler, targetJsonFiles, loadedJsonFiles} from '../js/Json.mjs'
+// import {testForJsonLoaded, JsonHandler, targetJsonFiles, loadedJsonFiles} from '../js/Json.mjs'
 import {World} from '../js/World.mjs'
 import {tilemaps} from '../js/Tilemaps.mjs'
 import {input} from '../js/Controls.mjs'
@@ -11,7 +11,7 @@ let ticks = 0
 canvas.width = 512
 canvas.height = 512
 
-const testForResourcesLoaded = () => testForImagesLoaded() && testForJsonLoaded()
+const testForResourcesLoaded = () => testForImagesLoaded()// && testForJsonLoaded()
 
 window.onload = function() {
 	//load resources here
@@ -32,11 +32,10 @@ function waitForResourcesLoaded() {
 }
 
 function tick() {
-	if (ticks % 10 == 0) {
+	if (ticks % 5 == 0) {
 		ctx.fillStyle = '#000000'
 		ctx.fillRect(0, 0, canvas.width, canvas.height)
 		World.draw()
-	} else if (ticks % 5 == 0) {
 		input()
 	}
 	
