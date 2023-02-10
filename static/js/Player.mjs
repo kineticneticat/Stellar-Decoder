@@ -1,10 +1,12 @@
-
+import {Vec2d} from '../js/Math.mjs'
 
 class Player {
-	constructor() {}
+	constructor() {
+		this.pos = Vec2d.zero
+	}
 	move(vec) {
-		
+		this.pos = this.pos.add(vec)
 	}
 }
 
-let player = new Player()
+export let player = new Player()

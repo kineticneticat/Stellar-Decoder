@@ -1,23 +1,18 @@
 import {ImageHandler} from '../js/Images.mjs'
-import {JsonHandler} from '../js/Json.mjs'
+import {player} from '../js/Player.mjs'
+import {Vec2d} from '../js/Math.mjs'
 
 class Tilemap {
 	constructor(path) {
 		this.path = path
-		this.data = new JsonHandler(path)
-	}
-	genTilesets() {
-		this.data = this.data.json
-		this.data.tilesets.forEach(x => {
-			x.img = new ImageHandler(`source/${x.image}`)
-		})
+		this.img = new ImageHandler(path)
+		this.imgCentreOffset = new Vec2d(this.img.width/2, this.img.height/2)
 	}
 	draw() {
-		
+		this.img.draw(player.pos.inverse)
 	}
 }
 
 export const tilemaps = [
-	new Tilemap('tilemaps/map.json')
+	new Tilemap('tilemaps/test_room.png')
 ]
-export const genTilesets = () => tilemaps.forEach(x => x.genTilesets())

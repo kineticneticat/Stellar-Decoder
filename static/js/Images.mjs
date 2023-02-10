@@ -22,8 +22,8 @@ export class ImageHandler {
 	get height() {
 		return this.img.height
 	}
-	draw(x, y) {
-		ctx.draw(this.img, x, y)
+	draw(offset) {
+		ctx.drawImage(this.img, offset.x, offset.y)
 	}
 }
 
